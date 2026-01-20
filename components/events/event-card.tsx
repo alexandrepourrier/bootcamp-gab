@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, MapPin, Play, ExternalLink } from "lucide-react";
+import { Calendar, Globe, MapPin, Play, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -48,12 +48,17 @@ export function EventCard({ event }: EventCardProps) {
             <Calendar className="h-4 w-4" />
             <span>{formatEventDate(event.event_date)}</span>
           </div>
-          {event.location && (
+          {event.is_remote ? (
+            <div className="flex items-center gap-2">
+              <Globe className="h-4 w-4" />
+              <span>En ligne</span>
+            </div>
+          ) : event.location ? (
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4" />
               <span>{event.location}</span>
             </div>
-          )}
+          ) : null}
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0">

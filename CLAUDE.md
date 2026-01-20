@@ -90,3 +90,6 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 RESEND_API_KEY=
 ```
+## MCP
+
+- tu peux utiliser le MCP context7 pour aller chercher la documentation spécifique à une fonction, une version, un composant...
