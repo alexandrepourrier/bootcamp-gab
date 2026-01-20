@@ -106,9 +106,3 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 RESEND_API_KEY=
 ```
-
-## Documentation détaillée
-
-- Architecture : `_bmad-output/planning-artifacts/architecture.md`
-- PRD : `_bmad-output/planning-artifacts/prd.md`
-- UX Design : `_bmad-output/planning-artifacts/ux-design-specification.md`
