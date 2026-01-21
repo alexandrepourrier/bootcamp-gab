@@ -7,12 +7,12 @@ import { EventFilters } from "@/components/events/event-filters";
 import { EventFiltersMobile } from "@/components/events/event-filters-mobile";
 import { EventEmptyState } from "@/components/events/event-empty-state";
 import {
-  getEvents,
   filterEvents,
   sortEvents,
   type EventFilters as EventFiltersType,
 } from "@/lib/data/events";
 import { eventsSearchParamsCache } from "@/lib/search-params/events";
+import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -35,8 +35,14 @@ export default async function EventsPage({ searchParams }: EventsPageProps) {
     periode: periode || null,
   };
 
-  const allEvents = getEvents();
-  const filteredEvents = filterEvents(allEvents, filters);
+  const supabase = await createClient();
+  const { data: allEvents } = await supabase
+    .from("events")
+    .select("*")
+    .eq("published", true)
+    .order("event_date", { ascending: true });
+
+  const filteredEvents = filterEvents(allEvents ?? [], filters);
   const { upcoming, past } = sortEvents(filteredEvents);
 
   return (

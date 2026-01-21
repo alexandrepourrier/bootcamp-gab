@@ -1,18 +1,10 @@
 import type { Event } from "@/lib/supabase/types";
-import eventsData from "@/data/events.json";
 
 export interface EventFilters {
   villes: string[];
   type: string | null;
   remote: boolean;
   periode: string | null;
-}
-
-/**
- * Récupère tous les events publiés depuis le fichier JSON
- */
-export function getEvents(): Event[] {
-  return (eventsData as Event[]).filter((event) => event.published);
 }
 
 /**
