@@ -6,7 +6,6 @@
 Les utilisateurs (principalement non-membres de la communauté GAB) n'ont pas de moyen centralisé pour découvrir les événements de la communauté, s'y inscrire et accéder aux replays.
 
 ### Objectif
-
 Créer une page events permettant de :
 - Découvrir les événements à venir et passés
 - Filtrer selon ses préférences (ville, type, format)
